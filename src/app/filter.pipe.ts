@@ -15,7 +15,8 @@ export class FilterPipe implements PipeTransform {
     for(const item of value) {
       const filterSearch: string = search.toLowerCase(); 
       let status: string = item.status;
-      if(status == filterSearch) {
+      let regex = new RegExp(filterSearch, 'gi');
+      if(status.match(regex)) {
         this.resultArray.push(item);
       }
     }

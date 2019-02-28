@@ -16,7 +16,7 @@ export class sortPipe implements PipeTransform {
   }
 
   sort(value) {
-     value.sort(function(a:string, b: string) {
+     value.sort(function(a, b) {
        let x = a.name.toLowerCase();
        let y = b.name.toLowerCase();
        if(x < y) { return -1};
